@@ -48,6 +48,15 @@ namespace Sdet_Bitcoin_Mock
             webdriverwaitforelementvisible(PleaseWait);
         }
 
+        [TestMethod]
+        public void VerifyDemoButtonOnMockPageWithPleaseWait1()
+        {
+            Driver.Navigate().GoToUrl(HomeUrl);
+            webdriverwaitforelementvisible(Template);
+            Driver.FindElement(DemoButton).Click();
+            webdriverwaitforelementvisible(PleaseWait);
+        }
+
         private void webdriverwaitforelementvisible(By by)
         {
             WebDriverWait wait = new WebDriverWait(Driver, System.TimeSpan.FromSeconds(15));
